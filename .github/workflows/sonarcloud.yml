@@ -3,7 +3,7 @@ name: SonarCloud Analysis with Quality Gate
 on:
   push:
     branches:
-      - main
+      - master
       - dependabot/bundler/assressable-2.8.1
   pull_request:
     types: [opened, synchronize, reopened]

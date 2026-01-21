@@ -5,6 +5,7 @@ on:
     branches:
       - main
       - dependabot/bundler/assressable-2.8.1
+      - Sat707-patch-1
   pull_request:
     types: [opened, synchronize, reopened]
 

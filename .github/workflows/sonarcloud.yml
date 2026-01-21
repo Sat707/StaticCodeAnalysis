@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - master
-      - dependabot/bundler/assressable-2.8.1
+      - dependabot/bundler/addressable-2.8.1
   pull_request:
     types: [opened, synchronize, reopened]
 

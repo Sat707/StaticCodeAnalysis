@@ -1,0 +1,25 @@
+name: Snyk SCA scan
+
+on:
+  push:
+    branches:
+     - main
+     - dependabot/bundler/addressable-2.8.1
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  snyk-sca-python-scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out Python project source code
+        uses: actions/checkout@v4
+
+      - name: Snyk SCA scan on Python dependencies
+        uses: cloudbees-io-gha/snyk-sca-publish@v1
+        with:
+          snyk-token: ${{ secrets.SNYK_TOKEN }}
+          org-id: ${{ vars.SNYK_ORG_ID }}
+          cli-params: --all-projects
